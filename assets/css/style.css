@@ -74,4 +74,117 @@ body {
     color: #18bc9c;
     font-weight: bold;
 }
+/* ===== BANNIÈRE PROFESSIONNELLE ===== */
+/* ===============================
+  
+.masthead {
+  height: 100vh;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.75),
+      rgba(13, 110, 253, 0.65)
+    ),
+    url("../img/baniere.jpg") center/cover no-repeat;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
+.intro-text {
+  max-width: 800px;
+}
+
+.intro-lead-in {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.9;
+}
+
+.intro-heading {
+  font-size: 3.2rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin: 15px 0;
+}
+
+.intro-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 35px;
+  opacity: 0.85;
+}
+
+.btn-banner {
+  display: inline-block;
+  padding: 14px 40px;
+  background-color: #ffffff;
+  color: #0d6efd;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-banner:hover {
+  background-color: #0d6efd;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+.masthead {
+  height: 100vh;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.75),
+      rgba(13, 110, 253, 0.65)
+    ),
+    url("../img/baniere.jpg") center/cover no-repeat;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.intro-text {
+  max-width: 800px;
+}
+
+.intro-lead-in {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.9;
+}
+
+.intro-heading {
+  font-size: 3.2rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin: 15px 0;
+}
+
+.intro-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 35px;
+  opacity: 0.85;
+}
+
+.btn-banner {
+  display: inline-block;
+  padding: 14px 40px;
+  background-color: #ffffff;
+  color: #0d6efd;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-banner:hover {
+  background-color: #0d6efd;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
