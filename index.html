@@ -5,12 +5,100 @@
     <title>Habsa DEME - Portfolio</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
-        /* Animations du texte de la bannière */
+        /* =====================
+           GENERAL
+        ===================== */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        h2.section-heading {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .section-subheading {
+            color: #777;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        /* =====================
+           BANNIÈRE PARALLAX
+        ===================== */
+        .masthead {
+            position: relative;
+            height: 55vh; /* Hauteur réduite */
+            background: url('assets/img/baniere.jpg') center/cover no-repeat fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .masthead::before {
+            content: "";
+            position: absolute;
+            top:0; left:0;
+            width:100%; height:100%;
+            background: rgba(0,0,0,0.5);
+        }
+
         .intro-text {
+            position: relative;
+            max-width: 800px;
+            color: white;
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 1.2s forwards;
-            animation-delay: 0.3s;
+        }
+
+        .intro-lead-in {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .intro-heading {
+            font-size: 2.8rem;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .intro-subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.85;
+        }
+
+        .btn-banner {
+            display: inline-block;
+            padding: 14px 40px;
+            background-color: #ffffff;
+            color: #0d6efd;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-banner:hover {
+            background-color: #0d6efd;
+            color: #ffffff;
+            transform: scale(1.1);
+            animation: pulse 1s infinite;
         }
 
         @keyframes fadeInUp {
@@ -20,27 +108,60 @@
             }
         }
 
-        .intro-lead-in, .intro-heading, .intro-subtitle, .btn-banner {
-            animation: fadeInUp 1s forwards;
+        @keyframes pulse {
+            0% { transform: scale(1.1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1.1); }
         }
 
-        .intro-lead-in { animation-delay: 0.5s; }
-        .intro-heading { animation-delay: 0.7s; }
-        .intro-subtitle { animation-delay: 0.9s; }
-        .btn-banner { animation-delay: 1.1s; }
-
-        /* Photo profil réduite */
+        /* =====================
+           ABOUT
+        ===================== */
         .profile-img {
             width: 180px;
             border-radius: 50%;
+        }
+
+        /* =====================
+           PROJECTS GRID
+        ===================== */
+        .project-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .project-images img {
+            width: 100%;
+            max-height: 260px;
+            object-fit: contain;
+            border-radius: 8px;
+            background: #f5f5f5;
+            padding: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .project-images img.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =====================
+           CONTACT
+        ===================== */
+        #contact a {
+            color: #18bc9c;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-<!-- HEADER / BANNIÈRE avec image directement dans HTML -->
-<header class="masthead" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/img/baniere.jpg') center/cover no-repeat; height: 45vh; display:flex; align-items:center; justify-content:center; text-align:center; color:white;">
-
+<!-- HEADER / BANNIÈRE -->
+<header class="masthead">
     <div class="intro-text">
         <div class="intro-lead-in">Développeuse Web & Data Analyst</div>
         <div class="intro-heading">Habsa DEME</div>
@@ -96,17 +217,17 @@
             <h4>📌 Application de gestion de supermarché (Django + Pandas)</h4>
             <p>Application complète pour la gestion des ventes, utilisateurs et rapports analytiques.</p>
             <div class="project-images">
-                <div><img src="assets/img/admin-dash.png" alt="Admin Dashboard"><p>Tableau de bord Admin</p></div>
-                <div><img src="assets/img/admin-users.png" alt="Gestion utilisateurs"><p>Gestion des utilisateurs</p></div>
-                <div><img src="assets/img/admin-reports.png" alt="Rapports analytiques"><p>Rapports analytics</p></div>
-                <div><img src="assets/img/caissier-dash.png" alt="Dashboard caissier"><p>Tableau de bord Caissier</p></div>
-                <div><img src="assets/img/caissier-pov.png" alt="Point de vente"><p>Point de vente</p></div>
-                <div><img src="assets/img/caissier-history.png" alt="Historique ventes"><p>Historique des ventes</p></div>
-                <div><img src="assets/img/caissier-receipt.png" alt="Reçu"><p>Exemple de reçu</p></div>
-                <div><img src="assets/img/gerant-dash.png" alt="Dashboard Gérant"><p>Dashboard Gérant</p></div>
-                <div><img src="assets/img/gerant-products.png" alt="Produits"><p>Gestion produits</p></div>
-                <div><img src="assets/img/gerant-report.png" alt="Rapport ventes"><p>Rapports de ventes</p></div>
-                <div><img src="assets/img/gerant-stock.png" alt="Stock bas"><p>Alerte stock</p></div>
+                <div><img src="assets/img/admin-dash.png" alt="Admin Dashboard"></div>
+                <div><img src="assets/img/admin-users.png" alt="Gestion utilisateurs"></div>
+                <div><img src="assets/img/admin-reports.png" alt="Rapports analytiques"></div>
+                <div><img src="assets/img/caissier-dash.png" alt="Dashboard caissier"></div>
+                <div><img src="assets/img/caissier-pov.png" alt="Point de vente"></div>
+                <div><img src="assets/img/caissier-history.png" alt="Historique ventes"></div>
+                <div><img src="assets/img/caissier-receipt.png" alt="Reçu"></div>
+                <div><img src="assets/img/gerant-dash.png" alt="Dashboard Gérant"></div>
+                <div><img src="assets/img/gerant-products.png" alt="Produits"></div>
+                <div><img src="assets/img/gerant-report.png" alt="Rapport ventes"></div>
+                <div><img src="assets/img/gerant-stock.png" alt="Stock bas"></div>
             </div>
         </div>
 
@@ -114,11 +235,11 @@
             <h4>📌 Mobile Wallet – UI/UX Design</h4>
             <p>Design complet de l’application mobile avec Figma.</p>
             <div class="project-images">
-                <div><img src="assets/img/xaliss-1.png" alt="Logo"><p>Page principale</p></div>
-                <div><img src="assets/img/xaliss-2.png" alt="Créer/Connexion"><p>Connexion / Inscription</p></div>
-                <div><img src="assets/img/xaliss-4.png" alt="Connexion"><p>Page connexion</p></div>
-                <div><img src="assets/img/xaliss-5.png" alt="Code"><p>Code confirmation</p></div>
-                <div><img src="assets/img/xaliss-6.png" alt="Options"><p>Options principales</p></div>
+                <div><img src="assets/img/xaliss-1.png" alt="Logo"></div>
+                <div><img src="assets/img/xaliss-2.png" alt="Créer/Connexion"></div>
+                <div><img src="assets/img/xaliss-4.png" alt="Connexion"></div>
+                <div><img src="assets/img/xaliss-5.png" alt="Code"></div>
+                <div><img src="assets/img/xaliss-6.png" alt="Options"></div>
             </div>
         </div>
     </div>
@@ -133,6 +254,28 @@
     </div>
 </section>
 
+<script>
+    // Animation des images au scroll
+    const images = document.querySelectorAll('.project-images img');
+
+    const revealOnScroll = () => {
+        const windowBottom = window.innerHeight + window.scrollY;
+        images.forEach(img => {
+            const imgTop = img.offsetTop + img.height/4;
+            if(windowBottom > imgTop){
+                img.classList.add('visible');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+</script>
+
 <script src="assets/js/main.js"></script>
 </body>
 </html>
+
+              
+  
+        
